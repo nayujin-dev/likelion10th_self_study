@@ -1,13 +1,9 @@
 import React from "react";
-
+import './Hello.css';
 function Hello(){
-    const PracticeStyle={
-        marginTop: '10px',
-        backgroundColor:'blue',
-    };
     return (
         <>
-            <div style={PracticeStyle}>HEllo</div>
+            <div className="red">HEllo</div>
         </>
     );
 }

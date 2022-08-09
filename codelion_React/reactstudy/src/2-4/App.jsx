@@ -37,7 +37,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
-import { GlobalStyles,darkTheme } from './styles';
+import { GlobalStyles,darkTheme, lightTheme } from './styles';
 import { ThemeProvider } from 'styled-components';
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
 
     return (
         <>
-            <ThemeProvider theme={darkTheme}>
+            <ThemeProvider theme={darkMode?darkTheme:lightTheme}>
             <GlobalStyles />
             <MediaDiv>
                 <Header>

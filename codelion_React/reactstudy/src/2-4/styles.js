@@ -5,7 +5,10 @@ import reset from 'styled-reset';
 
 export const lightTheme = {};
 
-export const darkTheme = {};
+export const darkTheme = {
+    fontColor: 'white',
+    bgColor:'#2c2c2c',
+};
 
 export const GlobalStyles = createGlobalStyle`
     ${reset}

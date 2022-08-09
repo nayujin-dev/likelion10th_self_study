@@ -37,13 +37,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
-import { GlobalStyles } from './styles';
+import { GlobalStyles,darkTheme } from './styles';
+import { ThemeProvider } from 'styled-components';
 
 function App() {
     const darkMode = true;
 
     return (
         <>
+            <ThemeProvider theme={darkTheme}>
             <GlobalStyles />
             <MediaDiv>
                 <Header>
@@ -94,6 +96,7 @@ function App() {
                     <FooterSmall>2022. by Yujin</FooterSmall>
                 </Footer>
             </MediaDiv>
+            </ThemeProvider>
         </>
     );
 }

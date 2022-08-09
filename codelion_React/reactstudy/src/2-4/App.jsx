@@ -40,6 +40,8 @@ import { faReact } from '@fortawesome/free-brands-svg-icons';
 import { GlobalStyles } from './styles';
 
 function App() {
+    const darkMode = true;
+
     return (
         <>
             <GlobalStyles />
@@ -49,7 +51,13 @@ function App() {
                         <TitleBig>멋사</TitleBig>
                         <TitleSmall>익명게시판</TitleSmall>
                     </TitleLogoDiv>
-                    <SubHeaderDiv>다크모드</SubHeaderDiv>
+                    <SubHeaderDiv>
+                        {darkMode?(
+                            <FontAwesomeIcon icon={faSun}/>
+                        ):(
+                            <FontAwesomeIcon icon={faMoon}/>
+                        )}
+                    </SubHeaderDiv>
                 </Header>
                 <Main>
                     <SlogunSection>

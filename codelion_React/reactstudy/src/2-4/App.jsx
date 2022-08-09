@@ -44,6 +44,7 @@ import loadingIcon from './loading.svg';
 function App() {
     const darkMode = true;
     const loading = true;
+    const isPost = true;
     return (
         <>
             <ThemeProvider theme={darkMode?darkTheme:lightTheme}>
@@ -79,15 +80,21 @@ function App() {
                                     <LoadingImg src={loadingIcon}/>
                                 </LoadingDiv>
                             ) : (
-                                <ul>
-                                    <EachPostLi>
-                                        <div>
-                                            <FontAwesomeIcon icon={faLocationPin} />
-                                            <PostLink>유진의 개발감자 깃허브</PostLink>
-                                        </div>
-                                        <PostRepl>[35]</PostRepl>
-                                    </EachPostLi>
-                                </ul>
+                                isPost ? (
+                                    <LoadingDiv>
+                                        아직 기록된 글이 없습니다.
+                                    </LoadingDiv>
+                                ) : (
+                                    <ul>
+                                        <EachPostLi>
+                                            <div>
+                                                <FontAwesomeIcon icon={faLocationPin} />
+                                                <PostLink>유진의 개발감자 깃허브</PostLink>
+                                            </div>
+                                            <PostRepl>[35]</PostRepl>
+                                        </EachPostLi>
+                                    </ul>
+                                )
                             )}
                         </PostListDiv>
                     </PostSection>

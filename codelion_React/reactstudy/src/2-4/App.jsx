@@ -39,10 +39,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
 import { GlobalStyles,darkTheme, lightTheme } from './styles';
 import { ThemeProvider } from 'styled-components';
+import loadingIcon from './loading.svg';
 
 function App() {
     const darkMode = true;
-
+    const loading = true;
     return (
         <>
             <ThemeProvider theme={darkMode?darkTheme:lightTheme}>
@@ -73,15 +74,21 @@ function App() {
                             <FontAwesomeIcon icon={faPenToSquare}/>
                         </PostTitleDiv>
                         <PostListDiv>
-                            <ul>
-                                <EachPostLi>
-                                    <div>
-                                        <FontAwesomeIcon icon={faLocationPin} />
-                                        <PostLink>유진의 개발감자 깃허브</PostLink>
-                                    </div>
-                                    <PostRepl>[35]</PostRepl>
-                                </EachPostLi>
-                            </ul>
+                            {loading ? (
+                                <LoadingDiv>
+                                    <LoadingImg src={loadingIcon}/>
+                                </LoadingDiv>
+                            ) : (
+                                <ul>
+                                    <EachPostLi>
+                                        <div>
+                                            <FontAwesomeIcon icon={faLocationPin} />
+                                            <PostLink>유진의 개발감자 깃허브</PostLink>
+                                        </div>
+                                        <PostRepl>[35]</PostRepl>
+                                    </EachPostLi>
+                                </ul>
+                            )}
                         </PostListDiv>
                     </PostSection>
                     <PagingSection>
